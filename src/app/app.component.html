@@ -1,0 +1,64 @@
+<app-server></app-server>
+
+<button class="btn btn-primary" (click)="cambialo()">Cambiar</button>
+
+
+<h3>Seccion 5</h3>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Bind it!</h3>
+        <ol>
+          <li>Create three new components: GameControl, Odd and Even</li>
+          <li>The GameControl Component should have buttons to start and stop the game</li>
+          <li>When starting the game, an event (holding a incrementing number) should get emitted each second (ref = setInterval())</li>
+          <li>The event should be listenable from outside the component</li>
+          <li>When stopping the game, no more events should get emitted (clearInterval(ref))</li>
+          <li>A new Odd component should get created for every odd number emitted, the same should happen for the Even Component (on even numbers)</li>
+          <li>Simply output Odd - NUMBER or Even - NUMBER in the two components</li>
+          <li>Style the element (e.g. paragraph) holding your output text differently in both components</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+<div class="container">
+    <div class="row">
+        <div class="xs-12-col">
+            <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <h1>titulo de ejemplo</h1>
+    <button class="btn btn-danger">peligro</button>
+    <input type="text" class="form-control">
+  </div>
+</div>
+<hr>
+ <div class="container">
+   <div class="row">
+     <div class="xs-12-col">
+      <button class="btn btn-primary" (click)="oddNumb = !oddNumb">Change odd number</button>
+      <div *ngIf="oddNumb">
+        <ul *ngFor="let odd of oddNumbers">
+          <li>
+            {{odd}}
+          </li>
+        </ul>
+      </div>
+
+      <div *ngIf="!oddNumb">
+        <ul *ngFor="let even of evenNumbers">
+          <li>
+            {{even}}
+          </li>
+        </ul>
+      </div>
+
+
+      
+      </div>
+   </div>
+ </div>
